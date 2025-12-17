@@ -20,6 +20,7 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		Created_at 	time.Time	`json:"created_at"`
 		Updated_at 	time.Time	`json:"updated_at"`
 		Email 		string		`json:"email"`
+		ChirpyRed	bool		`json:"is_chirpy_red"`
 	}
 
 	decoder := json.NewDecoder(r.Body)
@@ -50,6 +51,7 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		Created_at: user.CreatedAt,
 		Updated_at: user.UpdatedAt,
 		Email: user.Email,
+		ChirpyRed: user.IsChirpyRed,
 	})
 	return
 }
@@ -74,6 +76,7 @@ func (cfg *apiConfig) handlerUpdateEmailPassword(w http.ResponseWriter, r *http.
 		Created_at 	time.Time	`json:"created_at"`
 		Updated_at 	time.Time	`json:"updated_at"`
 		Email 		string		`json:"email"`
+		ChirpyRed	bool		`json:"is_chirpy_red"`
 	}
 
 	decoder := json.NewDecoder(r.Body)
@@ -105,6 +108,7 @@ func (cfg *apiConfig) handlerUpdateEmailPassword(w http.ResponseWriter, r *http.
 		Created_at: user.CreatedAt,
 		Updated_at: user.UpdatedAt,
 		Email: user.Email,
+		ChirpyRed: user.IsChirpyRed,
 	})
 	return
 }
